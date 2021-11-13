@@ -56,7 +56,7 @@ export default{
           return (this.loginLoading = false)
         }
         this.$http.post('login', this.loginForm).then(res=> {
-            console.log(res)
+            // console.log(res)
             if(res.data.meta.status === 200) {
                 this.$message.success(res.data.meta.msg +' '+ res.data.data.email)
                 window.sessionStorage.setItem("token",res.data.data.token)

@@ -36,8 +36,10 @@
 </template>
 
 <script>
+// import store from '/src/store/index.js'
 
 export default {
+    
 
     data(){
         return {

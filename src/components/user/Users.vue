@@ -1,5 +1,8 @@
 <template>
     <div>
+        <!-- <div @click="saveUserInfo">
+            设置数据
+        </div> -->
  <el-breadcrumb separator-class="el-icon-arrow-right">
   <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
   <el-breadcrumb-item>用户管理</el-breadcrumb-item>
@@ -111,6 +114,7 @@
 
 <script>
 
+// import {mapActions} from 'vuex'
 export default{
     data(){
         var checkEmail = (rule,value,cb)=>{
@@ -193,6 +197,18 @@ export default{
         this.getUserList()
     },
     methods:{
+        // ...mapActions({
+        //     getUser: 'user/getUser'
+        // }),
+        // saveUserInfo(){
+        //     this.getUser({
+        //         name: 'bobo'
+        //     })
+        //     this.$store.dispatch('user/getUser', {
+        //         name: 'haoyu'
+        //     })
+        //     this.$message.success('success')
+        // },
        async getUserList(){
        const {data:res} = await this.$http.get('users',{params:this.queryInfo})
        console.log(res)
