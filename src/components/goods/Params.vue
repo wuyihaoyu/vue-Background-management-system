@@ -285,7 +285,7 @@ export default {
             )
 
             if(res.meta.status !== 200){
-                return THIS,$message.error('删除参数失败！')
+                return this.$message.error('删除参数失败！')
 
             }
 

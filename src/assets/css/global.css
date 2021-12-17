@@ -23,3 +23,11 @@ html,body,#app{
 .el-cascader-panel {
     height: 320px !important;
 }
+
+.el-step__title{
+    font-size: 13px;
+}
+
+.el-steps {
+    margin: 15px 0;
+}
