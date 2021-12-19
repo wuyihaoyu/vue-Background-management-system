@@ -36,7 +36,7 @@
                 <el-input v-model="addForm.goods_number" type="number"></el-input>
             </el-form-item>
 
-            <el-form-item label="商品分类" prop="">
+            <el-form-item label="商品分类" prop="goods_cat">
                 <el-cascader expand-trigger="hover" :options="catelist" 
                 :props="cateProps" v-model="addForm.goods_cat" @change="handleChange">
                 </el-cascader>
@@ -44,12 +44,27 @@
         </el-tab-pane>
 
         <el-tab-pane label="商品参数" name="1"> 
-           
+            <el-form-item :label="item.attr_name" v-for="item in manyTableData" :key="item.attr_id">
+                <el-checkbox-group v-model="item.attr_vals">
+                    <el-checkbox :label="cb" v-for="(cb,i) in item.attr_vals" :key="i" border>
+
+                    </el-checkbox>
+                </el-checkbox-group>
+           </el-form-item>
         </el-tab-pane>
         <el-tab-pane label="商品属性" name="2">
-             
+            <el-form-item :label="item.attr_name" v-for="item in onlyTableData" :key="item.attr_id">
+               <el-input v-model="item.attr_vals"></el-input>
+            </el-form-item>  
         </el-tab-pane>
         <el-tab-pane label="商品图片" name="3">
+            <el-upload
+                :action="uploadURL"
+                :on-preview="handlePreview"
+                :on-remove="handleRemove"
+                list-type="picture">
+                <el-button size="small" type="primary">点击上传</el-button>
+            </el-upload>
           
         </el-tab-pane>
         <el-tab-pane label="商品内容" name="4">
@@ -96,6 +111,8 @@ export default {
              children:'children'
          },
          manyTableData:[],
+         onlyTableData:[],
+         uploadURL:'http://127.0.0.1:8888/api/private/v1/upload',
         }
     },
     created(){
@@ -136,9 +153,32 @@ export default {
 
             
             console.log(res.data)
+            
+            res.data.forEach(item =>{
+                item.attr_vals = item.attr_vals.length===0 ? [] :item.attr_vals.split(' ')
+            })
+
             this.manyTableData = res.data
             }
-        }
+            else if( this.activeIndex === '2'){
+               const {data:res} = await this.$http.get(`categories/${this.cateId}/attributes`,{
+                   params:{sel:'only'}
+               })
+
+               if(res.meta.status !== 200){
+                   return this.$message.error('获取静态属性失败！')
+               }
+               console.log(11111)
+               console.log(res.data)
+               this.onlyTableData = res.data
+            }
+        },
+        handlePreview(){
+
+        },
+        handleRemove(){
+
+        },
         
 
     },
@@ -154,5 +194,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-checkbox{
+    margin: 0 10px 0 0 !important;
+}
 
 </style>
