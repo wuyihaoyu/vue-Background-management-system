@@ -83,6 +83,8 @@
 </template>
 
 <script>
+
+import _ from 'lodash'
 export default {
     data(){
         return{
@@ -94,6 +96,7 @@ export default {
              goods_number:0,
              goods_cat:[],
              pics:[],
+             attrs:[]
          },
          addFormRules:{
              goods_name:[
@@ -214,11 +217,43 @@ export default {
         },
         add(){
             this.$refs.addFormRef.validate(
-                valid =>{
+                async valid =>{
                     if(!valid){
                         return this.$message.error('请填写必要的表单项！')
                     }
+
+                    const form = _.cloneDeep(this.addForm)
+                    form.goods_cat = form.goods_cat.join(',')
+
+                    this.manyTableData.forEach(item =>{
+                        const newInfo= {
+                            attr_id:item.attr_id,
+                            attr_value:item.attr_vals.join(' ')
+                        }
+                        this.addForm.attrs.push(newInfo)
+                    })
+                    this.onlyTableData.forEach(item =>{
+                        const newInfo ={
+                            attr_id:item.attr_id,
+                            attr_value:item.attr_vals
+                        }
+                        this.addForm.attrs.push(newInfo)
+                    })
+                    form.attrs = this.addForm.attrs
+                    console.log(form)
+
+                    const {data:res} = await this.$http.post('goods',form)
+
+                    if(res.meta.status !== 201){
+
+                        return this.$message.error('添加商品失败！'+res.meta.msg)
+                    }
+
+                    this.$message.success('添加商品成功！')
+                    this.$router.push('/goods')
                 }
+
+
             )
         }
         
