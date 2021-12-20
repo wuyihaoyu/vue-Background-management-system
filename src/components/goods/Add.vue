@@ -62,15 +62,23 @@
                 :action="uploadURL"
                 :on-preview="handlePreview"
                 :on-remove="handleRemove"
-                list-type="picture">
+                list-type="picture"
+                :headers="headerObj"
+                :on-success="handleSuccess">
                 <el-button size="small" type="primary">点击上传</el-button>
             </el-upload>
           
         </el-tab-pane>
         <el-tab-pane label="商品内容" name="4">
+            <quill-editor v-model="addForm.goods_introduce"></quill-editor>
+            <el-button type="primary" class="btnAdd" @click="add">添加商品</el-button>
         </el-tab-pane>
     </el-tabs>
     </el-form>
+
+    <el-dialog title="图片预览" :visible.sync="previewVisible" width="50%">
+        <img :src="previewPath" alt="" class="previewImg">
+    </el-dialog>
     </div>
 </template>
 
@@ -85,6 +93,7 @@ export default {
              goods_weight:0,
              goods_number:0,
              goods_cat:[],
+             pics:[],
          },
          addFormRules:{
              goods_name:[
@@ -113,6 +122,13 @@ export default {
          manyTableData:[],
          onlyTableData:[],
          uploadURL:'http://127.0.0.1:8888/api/private/v1/upload',
+         headerObj:{
+             Authorization:window.sessionStorage.getItem('token')
+         },
+         previewVisible:false,
+         previewPath:'',
+         goods_introduce:'',
+
         }
     },
     created(){
@@ -173,12 +189,38 @@ export default {
                this.onlyTableData = res.data
             }
         },
-        handlePreview(){
+        handlePreview(file){
+            console.log(file)
+            this.previewPath = file.response.data.url
+            this.previewVisible = true
 
         },
-        handleRemove(){
+        handleRemove(file){
+            const filePath = file.response.data.tmp_path
+
+            const i = this.addForm.pics.findIndex(x=>x.pic === filePath)
+
+            this.addForm.pics.splice(i,1)
+            console.log(this.addForm)
 
         },
+        handleSuccess(response){
+            console.log(response)
+
+            const picInfo = { pic:response.data.tmp_path }
+
+            this.addForm.pics.push(picInfo)
+            console.log(this.addForm)
+        },
+        add(){
+            this.$refs.addFormRef.validate(
+                valid =>{
+                    if(!valid){
+                        return this.$message.error('请填写必要的表单项！')
+                    }
+                }
+            )
+        }
         
 
     },
@@ -194,8 +236,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-checkbox{
+.el-checkbox {
     margin: 0 10px 0 0 !important;
+}
+.previewImg {
+    width: 100%;
+}
+.btnAdd{
+    margin-top: 15px;
 }
 
 </style>
