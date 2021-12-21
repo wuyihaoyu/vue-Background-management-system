@@ -9,37 +9,33 @@
 图形化需要自己下载,浏览器会打开新窗口，然后启动运行项目
 ```
 
-![image-20211221145507998](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145507998.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145507998.png)*
 
-![image-20211221145556120](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145556120.png
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145556120.png)*
 
-![image-20211221145630673](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145630673.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145630673.png)*
 
-![image-20211221145659853](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145659853.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145659853.png)*
 
-![image-20211221145846996](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145846996.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145846996.png)*
 
-项目图片：
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150007435.png)*
 
-![image-20211221150007435](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150007435.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150024135.png)*
 
-![image-20211221150024135](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150024135.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150052945.png)*
 
-![image-20211221150052945](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150052945.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150119492.png)*
 
-![image-20211221150119492](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150119492.png)
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150147495.png)*
+
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150211359.png)*
+
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150230053.png)*
+
+![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150247028.png)*
 
 
-
-![image-20211221150147495](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150147495.png)
-
-![image-20211221150211359](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150211359.png)
-
-![image-20211221150230053](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150230053.png)
-
-![image-20211221150247028](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150247028.png)
-
-### Compiles and hot-reloads for development
 
 ```
 在文件vue_api_server中启动后台服务，命令：node app.js
