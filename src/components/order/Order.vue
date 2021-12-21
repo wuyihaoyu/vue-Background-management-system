@@ -37,8 +37,8 @@
             </el-table-column>
             <el-table-column label="操作" >
                 <template>
-                  <el-button size="mini" type="primary" icon="el-icon-edit"></el-button>
-                  <el-button size="mini" type="success" icon="el-icon-location"></el-button>
+                  <el-button size="mini" type="primary" icon="el-icon-edit" @click="showBox"></el-button>
+                  <el-button size="mini" type="success" icon="el-icon-location" @click="showProgressBox"></el-button>
                 </template>
             </el-table-column>
             
@@ -53,14 +53,44 @@
         layout="total,sizes,prev,pager,next,jumper"
         :total="total" background>
         </el-pagination>
-
+ 
         </el-card>
+
+        <el-dialog title="修改地址" :visible.sync="addressVisible" width="50%" @close="addressDialogClosed">
+            <el-form :model="addressForm" :rules="addressFormRules" ref="addressFormRef" label-width="100px">
+                <el-form-item label="省市区/县" prop="address1"> 
+                   <el-cascader :options="cityData" v-model="addressForm.address1"></el-cascader>
+
+                </el-form-item>
+                <el-form-item label="详细地址" prop="address2"> 
+                     <el-input v-model="addressForm.address2"></el-input>  
+                </el-form-item>
+
+            </el-form>
+            
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="addressVisible = false">取消</el-button>
+                <el-button type="primary" @click="addressVisible = false">确定</el-button>
+            </span>
+
+        </el-dialog>
+
+        <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
+        <el-timeline>
+            <el-timeline-item v-for="(activity,index) in progressInfo" :key="index" :timestamp="activity.time">
+                {{activity.context}}
+                {{activity.location}}
+            </el-timeline-item>
+        </el-timeline>
+
+        </el-dialog>
 
        
     </div>
 </template>
 
 <script>
+import cityData from './citydata.js'
 export default {
     data(){
         return{
@@ -71,6 +101,47 @@ export default {
             },
             total:0,
             orderlist:[],
+            cityData:cityData,
+            addressForm:{
+                address1:[],
+                address1:'',
+            },
+            addressVisible:false,
+            addressFormRules:{
+                address1:[
+                    { required:true,message:'请选择省市区县',trigger:'blur' }
+                ],
+                 address2:[
+                    { required:true,message:'请填写详细地址',trigger:'blur' }
+                ]
+            },
+            progressVisible:false,
+            progressInfo:[],
+            res :{
+                      "data":[
+                                { "time":"2018-05-909:39:00",
+                                "ftime":"2018-05-909:39:00",
+                                "context" :"开始发货",
+                                "location":"北京市朝阳区",
+                                },
+                                 { "time":"2018-05-1109:39:00",
+                                "ftime":"2018-05-1109:39:00",
+                                "context" :"配送中",
+                                "location":"河北省中转站 ",
+                                },
+                                 { "time":"2018-05-1209:39:00",
+                                "ftime":"2018-05-1209:39:00",
+                                "context" :"配送中",
+                                "location":"广东省广州中转站",
+                                },
+                                 { "time":"2018-05-1309:39:00",
+                                "ftime":"2018-05-1309:39:00",
+                                "context" :"已签收,感谢使用顺丰,期待再次为您服务",
+                                "location":"广东江门市五邑大学",
+                                },
+                ]    
+            }
+
         }
     },
     created(){
@@ -96,6 +167,25 @@ export default {
             this.queryInfo.pagenum = newPage
             this.getOrderList()
 
+        },
+        showBox(){
+            this.addressVisible = true
+
+        },
+        addressDialogClosed(){
+            this.$refs.addressFormRef.resetFields()
+        },
+        showProgressBox(){
+            // const{data:res} =await this.$http.get('../../static/progress.json')
+            //单号没效的用本地文件 await this.$http.get('../../static/progress.json')
+
+            // if(res.meta.status !== 200 ){
+            //     return this.$message.error('获取进度失败！')
+            // }
+            this.progressInfo = this.res.data
+            
+            this.progressVisible = true
+            console.log(this.progressInfo)
         }
         
 
@@ -104,5 +194,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-cascader{
+    width: 100%;
+}
    
 </style>
