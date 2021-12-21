@@ -3,14 +3,44 @@
 ## Project setup
 ```
 本地克隆项目
-然后
-命令：npm install，下载所需包和环境
-本人是通过脚手架图形化来启动项目的
-cmd进入图形化，命令：vue ui
+然后命令窗口：npm install，下载所需包和环境,配置好数据库，连接好数据库
+首先启动后台：node app.js
+再cmd进入图形化，命令：vue ui
 图形化需要自己下载,浏览器会打开新窗口，然后启动运行项目
 ```
 
+![image-20211221145507998](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145507998.png)
+
+![image-20211221145556120](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145556120.png
+
+![image-20211221145630673](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145630673.png)
+
+![image-20211221145659853](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145659853.png)
+
+![image-20211221145846996](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221145846996.png)
+
+项目图片：
+
+![image-20211221150007435](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150007435.png)
+
+![image-20211221150024135](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150024135.png)
+
+![image-20211221150052945](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150052945.png)
+
+![image-20211221150119492](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150119492.png)
+
+
+
+![image-20211221150147495](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150147495.png)
+
+![image-20211221150211359](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150211359.png)
+
+![image-20211221150230053](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150230053.png)
+
+![image-20211221150247028](C:\Users\14902\AppData\Roaming\Typora\typora-user-images\image-20211221150247028.png)
+
 ### Compiles and hot-reloads for development
+
 ```
 在文件vue_api_server中启动后台服务，命令：node app.js
 其中需要自己在mysql中建表连接数据库，改为自己的数据库名字和密码
