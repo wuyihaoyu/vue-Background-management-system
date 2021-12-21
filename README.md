@@ -9,31 +9,29 @@
 图形化需要自己下载,浏览器会打开新窗口，然后启动运行项目
 ```
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145507998.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221145507998.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145556120.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221145556120.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145630673.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221145630673.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145659853.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221145659853.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221145846996.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221145846996.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150007435.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150007435.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150024135.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150024135.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150052945.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150052945.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150119492.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150147495.png)
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150147495.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150211359.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150211359.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150230053.png)*
 
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150230053.png)*
-
-![Image text](https://github.com/wuyihaoyu/vue-Background-management-system/blob/main/typora-user-images/image-20211221150247028.png)*
+![Image text](http://r4gf8lxyf.hn-bkt.clouddn.com/image-20211221150247028.png)*
 
 
 
